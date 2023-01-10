@@ -1,7 +1,14 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <div class="container">
-         <h1>{{ user.username }}</h1>
+    <div>
+        <img src="{{ user.profile.image.url }}" class="rounded-circle account-img" width="100px" height="100px">
+        <h1>{{ user.username }}</h1>
+        <p class="text-secondary">{{ user.email }}</p>
     </div>
+
+    
+
+        
+    
 {% endblock content %}
