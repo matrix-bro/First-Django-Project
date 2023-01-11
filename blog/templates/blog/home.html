@@ -2,10 +2,13 @@
 
 {% block content %}
     {% for post in posts %}
-        <h1>{{ post.title }}</h1>
-        <p>By {{ post.author }} on {{ post.date_posted | date:"F d, Y" }}</p>
-        <p>{{ post.content }}</p>
-        <br>
+        <img src="{{ post.author.profile.image.url }}" class="rounded-circle" width="100px" height="100px">
+        <a href="#" class="ml-2 mr-2">{{ post.author }}</a>
+        <small class="text-muted">{{ post.date_posted | date:"F d, Y" }}</small>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.content }}</p>        
+        <div class="border-bottom"></div>
+        <br>        
     {% endfor %}
 {% endblock content %}
 
