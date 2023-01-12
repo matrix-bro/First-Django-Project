@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Post
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 #Function based views
 def home(request):
@@ -12,9 +12,12 @@ def home(request):
 #Class based views
 class PostListView(ListView):
     model = Post
-    template_name = 'blog/home.html'
+    template_name = 'blog/home.html'  # <app>/<model>_<viewtype>.html  Eg, blog/home_list.html
     context_object_name = 'posts'
     ordering = ['-date_posted']
+
+class PostDetailView(DetailView):
+    model = Post   
 
 
 def about(request):
