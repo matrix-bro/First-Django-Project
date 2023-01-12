@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Post
 from django.views.generic import ListView, DetailView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 #Function based views
 def home(request):
@@ -20,7 +21,7 @@ class PostDetailView(DetailView):
     model = Post   
 
 
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'content']
 
