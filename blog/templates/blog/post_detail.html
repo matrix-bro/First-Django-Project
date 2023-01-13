@@ -3,7 +3,7 @@
 {% block content %}
 
     <img src="{{ object.author.profile.image.url }}" class="rounded-circle" width="100px" height="100px">
-    <a href="#" class="ml-2 mr-2">{{ object.author }}</a>
+    <a href="{% url 'user-posts' object.author.username %}" class="ml-2 mr-2">{{ object.author }}</a>
     <small class="text-muted">{{ object.date_posted | date:"F d, Y" }}</small>
     {% if object.author == user %}
         <a href="{% url 'post-update' object.id %}" class="btn btn-secondary btn-sm ml-2">Update</a>

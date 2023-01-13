@@ -1,6 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+    <h1 class="mb-3">Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
     {% for post in posts %}
         <img src="{{ post.author.profile.image.url }}" class="rounded-circle" width="100px" height="100px">
         <a href="{% url 'user-posts' post.author.username %}" class="ml-2 mr-2">{{ post.author }}</a>
