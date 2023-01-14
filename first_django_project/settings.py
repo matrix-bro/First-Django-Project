@@ -134,3 +134,14 @@ LOGIN_URL = 'login'
 
 MEDIA_ROOT = Path(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+#Prints reset email link in console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#To use Gmail
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_POST = 587
+#EMAIL_USE_TLS = True
+#EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
+#EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
