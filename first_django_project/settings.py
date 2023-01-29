@@ -125,11 +125,14 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+#telling crispy form to use bootstrap4
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+#After login redirect
 LOGIN_REDIRECT_URL = 'blog-home'
 
+#If user tries to access a page where a user needs to login first (Eg: post create page)
+#then this will redirect to login page
 LOGIN_URL = 'login'
 
 MEDIA_ROOT = Path(BASE_DIR, 'media')
